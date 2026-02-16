@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dvtnae8bahe2f"]
+
+[ext_resource type="Script" uid="uid://bd4x4mlkvyppv" path="res://scenes/Main/Main.cs" id="1_gol0p"]
+[ext_resource type="PackedScene" uid="uid://c1f6hylrcj08b" path="res://scenes/Project Manager/project_manager.tscn" id="2_px18m"]
+[ext_resource type="PackedScene" uid="uid://cu8m7u00eyo0r" path="res://scenes/Project Editor/project_editor.tscn" id="3_8gcrf"]
+
+[node name="Main" type="Control" unique_id=668904075 node_paths=PackedStringArray("projectManager", "projectEditor")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gol0p")
+projectManager = NodePath("ProjectManager")
+projectEditor = NodePath("ProjectEditor")
+
+[node name="ProjectManager" parent="." unique_id=1152009641 instance=ExtResource("2_px18m")]
+layout_mode = 1
+
+[node name="ProjectEditor" parent="." unique_id=1858609565 instance=ExtResource("3_8gcrf")]
+visible = false
+layout_mode = 1
+
+[connection signal="ProjectSelected" from="ProjectManager" to="." method="onProjectManagerProjectSelected"]

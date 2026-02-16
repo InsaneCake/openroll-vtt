@@ -6,6 +6,9 @@ using Godot;
 
 public partial class ProjectManager : Control
 {
+    [Signal]
+    public delegate void ProjectSelectedEventHandler(string path);
+
     string[] projectDirs = new string[]
     {
         "world/locations",
@@ -15,6 +18,7 @@ public partial class ProjectManager : Control
         "spellbook/spells",
         "items",
         "campaigns",
+        "assets",
     };
 
     string recentProjectsListFilePath = Path.Combine(
@@ -64,6 +68,7 @@ public partial class ProjectManager : Control
         recentProjects.Remove(path);
         recentProjects.Insert(0, path);
         SaveRecentProjectsList();
+        EmitSignal(SignalName.ProjectSelected, path);
     }
 
     void LoadRecentProjects()

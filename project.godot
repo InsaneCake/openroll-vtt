@@ -16,7 +16,7 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 config/name="openroll_vtt"
 config/version="0.0.1"
-run/main_scene="uid://c1f6hylrcj08b"
+run/main_scene="uid://dvtnae8bahe2f"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 

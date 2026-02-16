@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://cu8m7u00eyo0r"]
+
+[ext_resource type="Texture2D" uid="uid://bljuw46yvur7d" path="res://images/icons/globe.svg" id="1_4ikga"]
+[ext_resource type="Script" uid="uid://blii1jotbghed" path="res://scenes/Project Editor/ProjectEditor.cs" id="1_ntrgv"]
+[ext_resource type="Texture2D" uid="uid://d16g1auynamwf" path="res://images/kenney/board-game-icons/book_closed.svg" id="2_ntrgv"]
+[ext_resource type="Texture2D" uid="uid://bs64hy0h011uf" path="res://images/icons/bat.svg" id="3_5y7no"]
+[ext_resource type="Texture2D" uid="uid://ccmnirs4clmvs" path="res://images/kenney/board-game-icons/pawns.svg" id="4_hlfkm"]
+[ext_resource type="Texture2D" uid="uid://c1h8hibbd8cyv" path="res://images/icons/baguette.svg" id="5_u3f4t"]
+
+[node name="ProjectEditor" type="Control" unique_id=1858609565]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ntrgv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=660984000]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=2131729862]
+layout_mode = 2
+
+[node name="WorldButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=982597097]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "World"
+icon = ExtResource("1_4ikga")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="SpellbookButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1840170925]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spellbook"
+icon = ExtResource("2_ntrgv")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="BestiaryButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=1524227039]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bestiary"
+icon = ExtResource("3_5y7no")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="CharactersButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=968036588]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Characters"
+icon = ExtResource("4_hlfkm")
+flat = true
+alignment = 0
+expand_icon = true
+
+[node name="ItemsButton" type="Button" parent="VBoxContainer/HBoxContainer" unique_id=661663503]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Items"
+icon = ExtResource("5_u3f4t")
+flat = true
+alignment = 0
+expand_icon = true
