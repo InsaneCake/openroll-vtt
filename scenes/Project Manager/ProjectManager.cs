@@ -1,12 +1,14 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Godot;
 
 public partial class ProjectManager : Control
 {
     string[] projectDirs = new string[]
     {
-        "world",
+        "world/locations",
         "characters/players",
         "characters/npcs",
         "bestiary/monsters",
@@ -15,15 +17,33 @@ public partial class ProjectManager : Control
         "campaigns",
     };
 
+    string recentProjectsListFilePath = Path.Combine(
+        OS.GetUserDataDir(),
+        "cfg",
+        "recent_projects.ini"
+    );
+
+    List<string> recentProjects = [];
+
+    [Export]
+    VBoxContainer RecentProjectsContainer;
+
+    static void Log(string msg) => GD.PrintRich($"[color=#7986CB]ProjectManager:[/color]{msg}");
+
+    public override void _Ready()
+    {
+        LoadRecentProjects();
+    }
+
     public void NewWorld(string path)
     {
-        GD.Print("Creating world at: ", path);
+        Log($"Creating world at: {path}");
 
         var dirAcc = DirAccess.Open(path);
 
         foreach (string dir in projectDirs)
         {
-            GD.Print("Creating directory: ", dir);
+            Log($"Creating directory: {dir}");
             dirAcc.MakeDirRecursive(dir);
         }
 
@@ -32,6 +52,52 @@ public partial class ProjectManager : Control
 
     public void LoadWorld(string path)
     {
-        GD.Print("Loading world at: ", path);
+        Log($"Loading world at: {path}");
+        recentProjects.Remove(path);
+        recentProjects.Insert(0, path);
+        SaveRecentProjectsList();
+    }
+
+    void LoadRecentProjects()
+    {
+        Log($"Loading recent projects list from: {recentProjectsListFilePath}");
+        if (File.Exists(recentProjectsListFilePath))
+        {
+            recentProjects = File.ReadAllLines(recentProjectsListFilePath).ToList();
+        }
+        UpdateRecentProjectsButtons();
+    }
+
+    void SaveRecentProjectsList()
+    {
+        Log($"Saving recent projects list to: {recentProjectsListFilePath}");
+        Directory.CreateDirectory(Path.GetDirectoryName(recentProjectsListFilePath));
+        File.WriteAllLines(recentProjectsListFilePath, recentProjects.ToArray());
+        UpdateRecentProjectsButtons();
+    }
+
+    void UpdateRecentProjectsButtons()
+    {
+        Helpers.ClearNode(RecentProjectsContainer);
+        foreach (string path in recentProjects)
+        {
+            Button _b = new()
+            {
+                Text = path,
+                Alignment = HorizontalAlignment.Left,
+                Flat = true,
+            };
+
+            if (Directory.Exists(path) == false)
+            {
+                _b.Disabled = true;
+            }
+            else
+            {
+                _b.Pressed += () => LoadWorld(path);
+            }
+
+            RecentProjectsContainer.AddChild(_b);
+        }
     }
 }

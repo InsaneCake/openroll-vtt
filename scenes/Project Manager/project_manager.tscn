@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1f6hylrcj08b"]
+[gd_scene format=3 uid="uid://c1f6hylrcj08b"]
 
 [ext_resource type="Script" uid="uid://v8alxrxauvc0" path="res://scenes/Project Manager/ProjectManager.cs" id="1_fbwir"]
+[ext_resource type="Texture2D" uid="uid://doiny4wpedm85" path="res://images/icons/square-rounded-plus.svg" id="2_mv04p"]
+[ext_resource type="Texture2D" uid="uid://dmdf3vd8ujmeq" path="res://images/icons/folder.svg" id="3_638ol"]
 
-[node name="ProjectManager" type="Control"]
+[node name="ProjectManager" type="Control" unique_id=1152009641 node_paths=PackedStringArray("RecentProjectsContainer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,8 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fbwir")
+RecentProjectsContainer = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/RecentProjectsContainer")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1344917713]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,23 +22,62 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer" unique_id=501171175]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer" unique_id=1191086495]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer" unique_id=701225007]
+custom_minimum_size = Vector2(500, 500)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=674711176]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
+alignment = 1
 
-[node name="NewWorldButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="NewWorldButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1186607403]
 layout_mode = 2
-text = "New World"
+size_flags_horizontal = 3
+text = "New Project"
+icon = ExtResource("2_mv04p")
 
-[node name="NewWorldFileDialog" type="FileDialog" parent="CenterContainer/VBoxContainer/NewWorldButton"]
+[node name="NewWorldFileDialog" type="FileDialog" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NewWorldButton" unique_id=348747644]
 oversampling_override = 1.0
 title = "Open a Directory"
 file_mode = 2
 use_native_dialog = true
 
-[node name="LoadWorldButton" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="LoadWorldButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=538739961]
 layout_mode = 2
-text = "Load World"
+size_flags_horizontal = 3
+text = "Load Project"
+icon = ExtResource("3_638ol")
 
-[connection signal="pressed" from="CenterContainer/VBoxContainer/NewWorldButton" to="CenterContainer/VBoxContainer/NewWorldButton/NewWorldFileDialog" method="popup_centered"]
-[connection signal="dir_selected" from="CenterContainer/VBoxContainer/NewWorldButton/NewWorldFileDialog" to="." method="NewWorld"]
+[node name="LoadWorldFileDialog" type="FileDialog" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadWorldButton" unique_id=497056286]
+oversampling_override = 1.0
+title = "Open a Directory"
+file_mode = 2
+use_native_dialog = true
+
+[node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1466657843]
+layout_mode = 2
+text = "Recent Projects:"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1955572106]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RecentProjectsContainer" type="VBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer" unique_id=722412966]
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NewWorldButton" to="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NewWorldButton/NewWorldFileDialog" method="popup_file_dialog"]
+[connection signal="dir_selected" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NewWorldButton/NewWorldFileDialog" to="." method="NewWorld"]
+[connection signal="pressed" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadWorldButton" to="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadWorldButton/LoadWorldFileDialog" method="popup_file_dialog"]
+[connection signal="dir_selected" from="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadWorldButton/LoadWorldFileDialog" to="." method="LoadWorld"]
