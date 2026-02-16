@@ -14,14 +14,20 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="ic_dnd_vtt"
+config/name="openroll_vtt"
+config/version="0.0.1"
 run/main_scene="uid://c1f6hylrcj08b"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 
 [dotnet]
 
-project/assembly_name="ic_dnd_vtt"
+project/assembly_name="openroll_vtt"
+
+[editor]
+
+naming/default_signal_callback_name="on{NodeName}{SignalName}"
+naming/default_signal_callback_to_self_name="on{SignalName}"
 
 [rendering]
 
