@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   preserveAspectRatio="none"
+   x="0px"
+   y="0px"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="svg370"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs231">
+    <g
+       id="Symbol_51_0_Layer0_0_FILL">
+      <path
+         fill="#ffffff"
+         stroke="none"
+         d="m 12,-20 v -4 h -24 v 4 h -2 v -4 h -10 v 10 h 4 v 2 h -4 v 24 h 4 v 2 h -4 v 10 h 10 v -4 h 2 v 4 h 24 v -4 h 2 v 4 H 24 V 14 h -4 v -2 h 4 v -24 h -4 v -2 h 4 V -24 H 14 v 4 h -2 m 4,0 v -2 h 6 v 6 h -2 v -4 h -4 m -6,-2 v 4 h 8 v 8 h 4 v 20 h -4 v 8 h -8 v 4 h -20 v -4 h -8 v -8 h -4 v -20 h 4 v -8 h 8 v -4 h 20 m 12,38 v 6 h -6 v -2 h 4 v -4 h 2 m -44,-32 v -6 h 6 v 2 h -4 v 4 h -2 m 2,32 v 4 h 4 v 2 h -6 v -6 z"
+         id="path80" />
+      <path
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         stroke="none"
+         d="m 8,-16 v -4 H -8 v 4 h -8 v 8 h -4 V 8 h 4 v 8 h 8 v 4 H 8 v -4 h 8 V 8 h 4 V -8 h -4 v -8 z"
+         id="path81" />
+    </g>
+  </defs>
+  <g
+     id="panel_transparent_center_027"
+     transform="translate(24,24)">
+    <g
+       id="g279">
+      <use
+         xlink:href="#Symbol_51_0_Layer0_0_FILL"
+         id="use279" />
+    </g>
+  </g>
+</svg>

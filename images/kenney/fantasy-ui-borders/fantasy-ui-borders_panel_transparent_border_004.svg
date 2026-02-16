@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   preserveAspectRatio="none"
+   x="0px"
+   y="0px"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="svg370"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs231">
+    <g
+       id="Symbol_106_0_Layer0_0_FILL">
+      <path
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         stroke="none"
+         d="m -18,24 v -6 h -6 v 6 h 6 m -2,-4 v 2 h -2 v -2 h 2 m 2,-36 h -2 v 32 h 2 v -32 m -4,0 h -2 v 32 h 2 v -32 m -2,-8 v 6 h 6 v -6 h -6 m 2,4 v -2 h 2 v 2 h -2 m 38,40 v -2 h -32 v 2 h 32 m 0,4 v -2 h -32 v 2 h 32 m 8,0 v -6 h -6 v 6 h 6 m -2,-4 v 2 h -2 v -2 h 2 m 2,-36 h -2 v 32 h 2 v -32 m -4,0 h -2 v 32 h 2 v -32 m -4,-2 v -2 h -32 v 2 h 32 m 2,-6 v 6 h 6 v -6 h -6 m 2,4 v -2 h 2 v 2 h -2 m -4,-2 v -2 h -32 v 2 z"
+         id="path190" />
+      <path
+         fill="#ffffff"
+         stroke="none"
+         d="M 16,16 V -16 H -16 V 16 Z"
+         id="path191" />
+    </g>
+  </defs>
+  <g
+     id="panel_transparent_border_004"
+     transform="translate(24,24)">
+    <g
+       id="g334">
+      <use
+         xlink:href="#Symbol_106_0_Layer0_0_FILL"
+         id="use334" />
+    </g>
+  </g>
+</svg>

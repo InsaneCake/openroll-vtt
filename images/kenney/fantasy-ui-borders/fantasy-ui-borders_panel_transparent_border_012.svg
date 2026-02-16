@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   preserveAspectRatio="none"
+   x="0px"
+   y="0px"
+   width="48"
+   height="48"
+   viewBox="0 0 48 48"
+   id="svg370"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs231">
+    <g
+       id="Symbol_98_0_Layer0_0_FILL">
+      <path
+         fill="#ffffff"
+         fill-opacity="0.498039"
+         stroke="none"
+         d="m -18,24 v -6 h -6 v 6 h 6 m -2,-4 v 2 h -2 v -2 h 2 m -4,-44 v 6 h 6 v -6 h -6 m 2,4 v -2 h 2 v 2 h -2 m 46,44 v -6 h -6 v 6 h 6 m -2,-4 v 2 h -2 v -2 h 2 m -4,-44 v 6 h 6 v -6 h -6 m 2,4 v -2 h 2 v 2 h -2 m -4,4 v -8 h -32 v 8 h -8 v 32 h 8 v 8 h 32 v -8 h 8 v -32 h -8 m -2,-6 v 8 h 8 v 28 h -8 v 8 h -28 v -8 h -8 v -28 h 8 v -8 z"
+         id="path174" />
+      <path
+         fill="#ffffff"
+         stroke="none"
+         d="m 20,-12 h -8 v -8 h -24 v 8 h -8 v 24 h 8 v 8 h 24 v -8 h 8 z"
+         id="path175" />
+    </g>
+  </defs>
+  <g
+     id="panel_transparent_border_012"
+     transform="translate(24,24)">
+    <g
+       id="g326">
+      <use
+         xlink:href="#Symbol_98_0_Layer0_0_FILL"
+         id="use326" />
+    </g>
+  </g>
+</svg>

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://doiny4wpedm85" path="res://images/icons/square-rounded-plus.svg" id="2_mv04p"]
 [ext_resource type="Texture2D" uid="uid://dmdf3vd8ujmeq" path="res://images/icons/folder.svg" id="3_638ol"]
 
-[node name="ProjectManager" type="Control" unique_id=1152009641 node_paths=PackedStringArray("RecentProjectsContainer")]
+[node name="ProjectManager" type="Control" unique_id=1152009641 node_paths=PackedStringArray("RecentProjectsContainer", "NewProjectDialog", "OpenProjectDialog")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,6 +13,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fbwir")
 RecentProjectsContainer = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/ScrollContainer/RecentProjectsContainer")
+NewProjectDialog = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NewWorldButton/NewWorldFileDialog")
+OpenProjectDialog = NodePath("CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/LoadWorldButton/LoadWorldFileDialog")
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=1344917713]
 layout_mode = 1
@@ -36,6 +38,15 @@ theme_override_constants/margin_bottom = 10
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 
+[node name="Label2" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=238531287]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "OpenRoll VTT"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=960863843]
+layout_mode = 2
+
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=674711176]
 custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
@@ -51,6 +62,7 @@ icon = ExtResource("2_mv04p")
 oversampling_override = 1.0
 title = "Open a Directory"
 file_mode = 2
+access = 2
 use_native_dialog = true
 
 [node name="LoadWorldButton" type="Button" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=538739961]
@@ -63,6 +75,7 @@ icon = ExtResource("3_638ol")
 oversampling_override = 1.0
 title = "Open a Directory"
 file_mode = 2
+access = 2
 use_native_dialog = true
 
 [node name="Label" type="Label" parent="CenterContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1466657843]

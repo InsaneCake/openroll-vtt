@@ -23,10 +23,18 @@ public partial class ProjectManager : Control
         "recent_projects.ini"
     );
 
+    string latestProjectDir = "";
+
     List<string> recentProjects = [];
 
     [Export]
     VBoxContainer RecentProjectsContainer;
+
+    [Export]
+    FileDialog NewProjectDialog;
+
+    [Export]
+    FileDialog OpenProjectDialog;
 
     static void Log(string msg) => GD.PrintRich($"[color=#7986CB]ProjectManager:[/color]{msg}");
 
@@ -65,6 +73,14 @@ public partial class ProjectManager : Control
         {
             recentProjects = File.ReadAllLines(recentProjectsListFilePath).ToList();
         }
+
+        if (recentProjects.Count != 0)
+        {
+            latestProjectDir = Directory.GetParent(recentProjects[0]).FullName;
+            NewProjectDialog.RootSubfolder = latestProjectDir;
+            OpenProjectDialog.RootSubfolder = latestProjectDir;
+        }
+
         UpdateRecentProjectsButtons();
     }
 

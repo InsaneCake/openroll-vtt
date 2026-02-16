@@ -20,6 +20,12 @@ run/main_scene="uid://c1f6hylrcj08b"
 config/features=PackedStringArray("4.6", "C#", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/stretch/aspect="expand"
+
 [dotnet]
 
 project/assembly_name="openroll_vtt"
@@ -29,6 +35,12 @@ project/assembly_name="openroll_vtt"
 naming/default_signal_callback_name="on{NodeName}{SignalName}"
 naming/default_signal_callback_to_self_name="on{SignalName}"
 
+[gui]
+
+theme/custom="uid://bepyj3uj6nnkd"
+theme/custom_font="uid://b3tk2ecsh6k32"
+
 [rendering]
 
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0.08468988, 0.08468994, 0.08468992, 1)

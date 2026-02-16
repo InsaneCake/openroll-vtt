@@ -1,0 +1,15 @@
+[gd_resource type="Theme" format=3 uid="uid://bepyj3uj6nnkd"]
+
+[ext_resource type="Texture2D" uid="uid://bq3u4b7vwsqxl" path="res://images/kenney/fantasy-ui-borders/fantasy-ui-borders_panel_border_024.svg" id="1_afw5t"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1knni"]
+texture = ExtResource("1_afw5t")
+texture_margin_left = 15.0
+texture_margin_top = 15.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(0.4745098, 0.5254902, 0.79607844, 1)
+draw_center = false
+
+[resource]
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_1knni")
